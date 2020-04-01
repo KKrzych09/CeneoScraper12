@@ -26,3 +26,8 @@
 ## Etap 4
 - transformacja danych
 - refaktoryzacja kodu
+
+## Etap 5
+- zapis danych do obiektu dataframe (ramka danych)
+- wykonanie podstawowych obliczeń na danych w ramce danych
+- wykonanie prostych wykresów na podstawie danych
