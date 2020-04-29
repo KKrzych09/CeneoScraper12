@@ -39,12 +39,12 @@
             /run.py
             /config.py
             /app
-                /__init__.py
+                /\_\_init\_\_.py
                 /views.py
                 /models.py
                 /scraper.py
                 /analyzer.py
-                /opinions_json
+                /opinions\_json
                 /static/
                     /main.css
                 /templates/
