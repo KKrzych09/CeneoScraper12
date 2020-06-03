@@ -59,6 +59,6 @@ def product(id):
 
 @app.route('/products')
 def products():
-    products = os.listdir("./opinions_json")
+    products = os.listdir("app/opinions_json")
     products = [product.replace(".json", "") for product in products]
     return render_template("products.html", products=products)

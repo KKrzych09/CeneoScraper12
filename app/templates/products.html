@@ -2,9 +2,8 @@
 {% block body %}
     <ul class="list-group">
         {% for product in products %}
-            <li class="list-group-item"><a class="navbar-brand" href="{{ url_for('product', id-product) }}"> {{product}}</a></li>
-            <p>{{product}}</p>
+            <li class="list-group-item"><a class="navbar-brand" href="{{ url_for('product', id=product) }}"> {{product}}</a></li>
         {% endfor %}
     </ul>
-{% endlblock %}
+{% endblock %}
     

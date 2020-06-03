@@ -9,7 +9,7 @@
                 <span aria-hidden="true">&times;</span>
             </button>
     {% endif %}
-    <form method="POST" action="/extract">
+    <form method="POST" action="{{ url_for('extract') }}">
         {{ form.hidden_tag() }}
         {{ form.product_id.label }} {{ form.product_id(size=20) }}
         {{ form.submit(class_= "btn btn-info") }}
