@@ -5,6 +5,7 @@ from app.forms import ProductForm
 from app.models import Opinion, Product
 import requests
 import pandas as pd
+import os
 Markdown(app)
 
 app.config['SECRET_KEY'] = "TajemniczyMysiSprzęt"
@@ -21,7 +22,7 @@ def about():
         content = f.read()
     return render_template("about.html", text=content)
 
-@app.route('/extract', methods=['POST', 'GET'])
+@app.route('/extract_opinions', methods=['POST', 'GET'])
 def extract():
     form = ProductForm()
     if form.validate_on_submit():
@@ -30,6 +31,7 @@ def extract():
         if page_respons.status_code == requests.codes['ok']:
             product = Product(product_id)
             product.extract_product()
+            #product.analize()
             product.save_product()
             return redirect(url_for("product", id=product_id))
         else:
@@ -54,8 +56,9 @@ def product(id):
         titles=opinions.columns.values 
     )
 
-    pass
 
 @app.route('/products')
 def products():
-    pass
+    products = os.listdir("./opinions_json")
+    products = [product.replace(".json", "") for product in products]
+    return render_template("products.html", products=products)
